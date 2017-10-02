@@ -42,4 +42,4 @@ exports.deleteTask = (request, response) => {
 		if (error) response.send(error);
 		response.json({ message: 'Task successfully deleted'});
 	});
-}
+};
