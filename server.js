@@ -12,9 +12,9 @@ const express = require('express'),
 
 mongoose.Promise = global.Promise;
 
-console.log('MONGOLAB_URI: ' + process.env.MONGOLAB_URI);
+console.log('MONGODB_URI: ' + process.env.MONGODB_URI);
 
-mongoose.connect(process.env.MONGOLAB_URI, (error) => {
+mongoose.connect(process.env.MONGODB_URI, (error) => {
 	if (error) console.error(error);
 	else console.log('mongo connected');
 });	
