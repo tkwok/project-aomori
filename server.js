@@ -7,7 +7,7 @@ let express = require('express'),
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.MONGOLAB_URI + '/tododb', (error) => {
+mongoose.connect(process.env.MONGOLAB_URI, (error) => {
 	if (error) console.error(error);
 	else console.log('mongo connected');
 });	
