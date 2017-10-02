@@ -1,4 +1,9 @@
-let express = require('express'),
+/*	Project Aomori
+	Started 10.01.2017
+*/
+'use strict';
+
+const express = require('express'),
 	app = express(),
 	port = process.env.PORT || 3500,
 	mongoose = require('mongoose'),
@@ -6,6 +11,8 @@ let express = require('express'),
 	bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
+
+console.log('MONGOLAB_URI: ' + process.env.MONGOLAB_URI);
 
 mongoose.connect(process.env.MONGOLAB_URI, (error) => {
 	if (error) console.error(error);
@@ -15,7 +22,7 @@ mongoose.connect(process.env.MONGOLAB_URI, (error) => {
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
-let routes = require('./api/routes/todoListRoutes');
+const routes = require('./api/routes/todoListRoutes');
 routes(app);
 
 app.listen(port);
