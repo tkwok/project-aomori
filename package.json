@@ -1,7 +1,7 @@
 {
-  "name": "todolistapi",
+  "name": "project-aomori",
   "version": "1.0.0",
-  "description": "RESTful todoListApi",
+  "description": "Project Aomori RESTful API",
   "main": "index.js",
   "engines": {
       "node": "8.4.0",
