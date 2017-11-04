@@ -1,12 +1,11 @@
 'use strict';
 
 let mongoose = require('mongoose'),
-	Schema = mongoose.Schema;
-
-let TaskSchema = new Schema({
+	Schema = mongoose.Schema,
+	TaskSchema = new Schema({
 	name: {
 		type: String,
-		require: 'Kindly enter the name of the task'
+		require: 'Enter the name of the task'
 	},
 	createdDate: {
 		type: Date,
@@ -21,4 +20,4 @@ let TaskSchema = new Schema({
 	}
 });
 
-module.exports = mongoose.model('Tasks', TaskSchema);
+module.exports = mongoose.model('Task', TaskSchema);

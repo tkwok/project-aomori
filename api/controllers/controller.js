@@ -1,16 +1,16 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-	Task = mongoose.model('Tasks');
+let mongoose = require('mongoose'),
+	Task = mongoose.model('Task');
 
-exports.listAllTasks = (request, response) => {
+exports.getAll = (request, response) => {
 	Task.find({}, (error, task) => {
 		if (error) response.send(error);
 		response.json(task);
 	});
 };
 
-exports.createTask = (request, response) => {
+exports.create = (request, response) => {
 	let newTask = new Task(request.body);
 
 	newTask.save((error, task) => {
@@ -19,14 +19,14 @@ exports.createTask = (request, response) => {
 	});
 };
 
-exports.readTask = (request, response) => {
+exports.get = (request, response) => {
 	Task.findById(request.params.taskId, (error, task) => {
 		if (error) response.send(error); 
 		response.json(task);
 	});
 };
 
-exports.updateTask = (request, response) => {
+exports.update = (request, response) => {
 	Task.findOneAndUpdate({
 		_id: request.params.taskId
 	}, request.body, {new: true}, (error, task) => {
@@ -35,7 +35,7 @@ exports.updateTask = (request, response) => {
 	});
 };
 
-exports.deleteTask = (request, response) => {
+exports.delete = (request, response) => {
 	Task.remove({
 		_id: request.params.taskId
 	}, (error, task) => {
