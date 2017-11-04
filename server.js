@@ -1,5 +1,6 @@
 /*	Project Aomori
 	Started 10.01.2017
+	Author: Tony Kwok
 */
 'use strict';
 
@@ -10,7 +11,6 @@ const express = require('express'),
 	Task = require('./api/models/model'),
 	bodyParser = require('body-parser'),
 	routes = require('./api/routes/route');
-
 
 mongoose.Promise = global.Promise;
 
