@@ -1,14 +1,15 @@
 'use strict';
 
 module.exports = (app) => {
-	let controller = require('../controllers/controller');
+	const controller = require('../controllers/controller');
 
-	app.route('/task')
-		.get(controller.getAll)
-		.post(controller.create);
+	// app.route('/user')
+		// .all(function(req, res, next) {
+		// 	console.log(controller);
+		// 	next();
+	  	// })
+	// 	.post(controller.addUser);
 
-	app.route('/task/:taskId')
-		.get(controller.get)
-		.put(controller.update)
-		.delete(controller.delete);
+	app.route('/users')
+		.all(controller.getUsers);
 };

@@ -8,14 +8,14 @@ const express = require('express'),
 	app = express(),
 	port = process.env.PORT || 3500,
 	mongoose = require('mongoose'),
-	Task = require('./api/models/model'),
 	bodyParser = require('body-parser'),
 	routes = require('./api/routes/route');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.MONGODB_URI, {
-	useMongoClient: true,
+const mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/aomori'
+
+mongoose.connect(mongoUri, {
 	socketTimeoutMS: 0,
 	keepAlive: true,
 	reconnectTries: 30
@@ -36,7 +36,7 @@ app.all('/*', (request, response, next) => {
 	}
 });
 
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 routes(app);

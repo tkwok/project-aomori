@@ -4,11 +4,12 @@
   "description": "Project Aomori RESTful API",
   "main": "index.js",
   "engines": {
-      "node": "8.4.0",
-      "npm": "5.4.2"
+    "node": "8.4.0",
+    "npm": "5.4.2"
   },
   "scripts": {
-    "test": "echo \"No test specified yet\" && exit 1"
+    "test": "echo \"No test specified yet\" && exit 1",
+    "pretest": "eslint --ignore-path .gitignore ."
   },
   "keywords": [
     "RESTful",
@@ -17,11 +18,14 @@
   "author": "Tony Kwok",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "body-parser": "^1.18.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-node": "^6.0.1",
+    "nodemon": "^1.17.3"
   },
   "dependencies": {
     "express": "^4.16.1",
-    "mongoose": "latest"
+    "mongoose": "^5.0.17"
   },
   "start": "nodemin server.js"
 }
