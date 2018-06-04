@@ -6,4 +6,5 @@ Updated 04.30.2018
 
 ## To start server locally:
 mongod 
+
 npm start
