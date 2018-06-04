@@ -8,7 +8,7 @@ module.exports = {
 		let newUser = new UserModel(request.body);
 		newUser.save((error, user) => {
 			response.json(user);
-			console.log(helperServices.saltHashText('test123'));
+			// console.log(helperServices.saltHashText('test123'));
 		});
 	},
 	getUsers: (request, response) => {

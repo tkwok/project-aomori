@@ -18,6 +18,3 @@ module.exports = {
         return hashWithSha512(text, generateRandomString(16));
     }
 };
-
-
-

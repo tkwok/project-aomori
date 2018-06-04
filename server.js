@@ -11,9 +11,9 @@ const express = require('express'),
 	bodyParser = require('body-parser'),
 	routes = require('./api/routes/route');
 
-mongoose.Promise = global.Promise;
+const mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/aomori';
 
-const mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/aomori'
+mongoose.Promise = global.Promise;
 
 mongoose.connect(mongoUri, {
 	socketTimeoutMS: 0,
